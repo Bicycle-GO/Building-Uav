@@ -3,6 +3,9 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 const files = { '/': ['index.html', 'text/html'], '/index.html': ['index.html', 'text/html'], '/styles.css': ['styles.css', 'text/css'], '/app.js': ['app.js', 'application/javascript'] };
+for (const page of ['project', 'analysis', 'roadmap', 'meeting']) {
+  files[`/${page}.html`] = [`${page}.html`, 'text/html'];
+}
 http.createServer((req, res) => {
   const asset = files[new URL(req.url, 'http://localhost').pathname];
   if (!asset) { res.writeHead(404); res.end('Not found'); return; }

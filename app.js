@@ -2,6 +2,7 @@ const notes = document.querySelector('#meeting-notes');
 const status = document.querySelector('#save-status');
 const checks = [...document.querySelectorAll('.agenda-item input')];
 const storageKey = 'urban-scan-meeting-v1';
+if (notes) {
 function progress() {
   document.querySelector('#agenda-progress').textContent = `${checks.filter(input => input.checked).length} / 5 논의 완료`;
 }
@@ -21,19 +22,6 @@ function save() {
 }
 notes.addEventListener('input', save);
 checks.forEach(input => input.addEventListener('change', save));
-document.querySelectorAll('[data-period]').forEach(button => {
-  button.addEventListener('click', () => {
-    const current = button.dataset.period === 'after';
-    document.querySelectorAll('[data-period]').forEach(item => {
-      const selected = item === button;
-      item.classList.toggle('active', selected);
-      item.setAttribute('aria-pressed', String(selected));
-    });
-    document.querySelector('#change-area').style.display = current ? '' : 'none';
-    document.querySelector('#period-label').textContent = current ? '현재 시점 · 변화 영역 표시 중' : '이전 시점 · 비교 기준 영상';
-    document.querySelector('#detect-type').textContent = current ? '외곽 면적 변화' : '비교 기준 시점';
-  });
-});
 document.querySelector('#download-notes').addEventListener('click', () => {
   const agenda = checks.map(input => `${input.checked ? '[완료]' : '[미논의]'} ${input.closest('label').querySelector('strong').textContent}`).join('\n');
   const text = `URBAN SCAN | 프로젝트 킥오프 회의\n작성일: ${new Date().toLocaleDateString('ko-KR')}\n\n[회의 안건]\n${agenda}\n\n[회의 메모]\n${notes.value || '(작성된 메모 없음)'}\n`;
@@ -46,4 +34,19 @@ document.querySelector('#download-notes').addEventListener('click', () => {
   link.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
   status.textContent = '회의 메모 내려받기를 요청했습니다.';
+});
+
+}
+document.querySelectorAll('[data-period]').forEach(button => {
+  button.addEventListener('click', () => {
+    const current = button.dataset.period === 'after';
+    document.querySelectorAll('[data-period]').forEach(item => {
+      const selected = item === button;
+      item.classList.toggle('active', selected);
+      item.setAttribute('aria-pressed', String(selected));
+    });
+    document.querySelector('#change-area').style.display = current ? '' : 'none';
+    document.querySelector('#period-label').textContent = current ? '현재 시점 · 변화 영역 표시 중' : '이전 시점 · 비교 기준 영상';
+    document.querySelector('#detect-type').textContent = current ? '외곽 면적 변화' : '비교 기준 시점';
+  });
 });
