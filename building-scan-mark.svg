@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>BUILDINGSCAN · 드론과 건축물</title>
+  <rect width="64" height="64" rx="15" fill="#2C5947"/>
+  <path d="M29 27 14 53h36L35 27" fill="#CFE5A4" fill-opacity=".12"/>
+  <path d="m28 28-14 25m22-25 14 25" stroke="#BFD991" stroke-width="1.5" stroke-dasharray="2 3" stroke-linecap="round"/>
+  <g stroke="#F7FAEF" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m27 17-7-5m17 5 7-5m-17 9-8 4m18-4 8 4"/>
+    <ellipse cx="18" cy="11.5" rx="6" ry="2.5"/>
+    <ellipse cx="46" cy="11.5" rx="6" ry="2.5"/>
+    <ellipse cx="17" cy="25" rx="6" ry="2.5"/>
+    <ellipse cx="47" cy="25" rx="6" ry="2.5"/>
+    <rect x="26" y="15" width="12" height="9" rx="3" fill="#F7FAEF"/>
+  </g>
+  <circle cx="32" cy="22" r="2.3" fill="#2C5947"/>
+  <path d="M17 53V41h8v12m3 0V33h10v20m3 0V39h7v14" fill="#F5F8EA"/>
+  <path d="M31 38h4m-4 5h4m-4 5h4M20 45h2m21-1h2" stroke="#2C5947" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M13 54h38" stroke="#C6DF99" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

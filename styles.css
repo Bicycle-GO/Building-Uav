@@ -10,3 +10,13 @@
 @media print{.header nav,.page-navigation,.skip-link{display:none}}
 .page-navigation>a:first-child{display:flex;font-size:13px}
 @media print{.page-navigation{display:none}}
+
+/* BUILDINGSCAN shared vector identity */
+.brand{gap:10px;letter-spacing:.015em;flex-shrink:0}
+.brand .brand-mark{display:block;width:48px;height:48px;flex-shrink:0}
+.brand-wordmark{display:inline-block;line-height:1;white-space:nowrap}
+.brand .brand-light{color:#6a8750;font-weight:500}
+footer .brand{gap:8px}
+footer .brand .brand-mark{width:32px;height:32px}
+@media(max-width:700px){.header .brand{font-size:19px}.header .brand .brand-mark{width:42px;height:42px}footer{flex-wrap:wrap}footer>span{margin-left:0}}
+@media print{.brand .brand-mark{print-color-adjust:exact}}

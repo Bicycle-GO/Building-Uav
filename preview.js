@@ -3,6 +3,7 @@ const http = require("node:http");
 const fs = require("node:fs");
 const path = require("node:path");
 const files = {
+  "/building-scan-mark.svg": ["building-scan-mark.svg", "image/svg+xml"],
   "/": ["index.html", "text/html"],
   "/index.html": ["index.html", "text/html"],
   "/styles.css": ["styles.css", "text/css"],
@@ -80,6 +81,6 @@ http
   })
   .listen(Number(process.env.PORT) || 4173, "127.0.0.1", () =>
     console.log(
-      "URBAN SCAN preview: http://127.0.0.1:" + (process.env.PORT || 4173),
+      "BUILDINGSCAN preview: http://127.0.0.1:" + (process.env.PORT || 4173),
     ),
   );

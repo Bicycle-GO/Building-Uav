@@ -1,11 +1,217 @@
 <!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="대학생 공동 연구 프로젝트: 드론 항공촬영과 AI를 활용한 건축물 변화 탐지. 프로젝트 킥오프 회의 자료 및 논의 공간.">
-  <title>분석 데모 | URBAN SCAN</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%232c594b'/%3E%3Cpath d='M10 26V14h7v12m6 0V10h7v16M7 30h26' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>
-</head>
-<body><a class="skip-link" href="#main-content">본문 바로가기</a><header class="header"><a class="brand" href="index.html" aria-label="URBAN SCAN 홈"><span class="brand-icon" aria-hidden="true">▥</span>URBAN<span class="brand-light">SCAN</span></a><nav aria-label="주요 메뉴"><a href="index.html">홈</a><a href="project.html">프로젝트 소개</a><a href="analysis.html" aria-current="page">분석 데모</a><a href="roadmap.html">개발 계획</a><a href="meeting.html">회의 공간</a></nav><span class="header-draft">연구·개발계획 v0.2</span></header><main id="main-content"><div class="page-intro"><div class="breadcrumb"><a href="index.html">홈</a><span aria-hidden="true">/</span><span>분석 데모</span></div><div class="eyebrow">URBAN SCAN / 02</div><h1>두 시점을 비교하며 변화를 살펴보세요</h1><p>가상 시범 구역으로 탐지 결과와 검토 흐름을 미리 경험합니다.</p></div>    <section class="section demo-section" id="demo"><div class="section-heading"><div><div class="eyebrow">02 / PRODUCT CONCEPT</div><h2>이런 분석 도구를 함께 만듭니다</h2></div><span class="outline-badge">설명용 예시 · 실제 AI 분석 아님</span></div><div class="demo"><div class="demo-map"><div class="map-toolbar"><span>시범 구역 A <small>가상 데이터</small></span><div class="segmented" aria-label="시점 선택"><button data-period="before" aria-pressed="false">이전 시점</button><button class="active" data-period="after" aria-pressed="true">현재 시점</button></div></div><svg id="analysis-map" viewBox="0 0 760 350" role="img" aria-label="가상 시범 구역의 건축물 배치와 변화 영역"><defs><pattern id="map-grid" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0V26" fill="none" stroke="#dce1d7" stroke-width=".8"/></pattern></defs><rect width="760" height="350" fill="#e9ede3"/><rect width="760" height="350" fill="url(#map-grid)"/><g transform="rotate(-12 380 175)"><path d="M0 176H800M380-80V450" stroke="#fffef7" stroke-width="40"/><path d="M0 176H800M380-80V450" stroke="#c7cec2" stroke-width="1" stroke-dasharray="8 8"/><g fill="#c7d1bf" stroke="#a5b59d" stroke-width="2"><path d="M70 35h115v90H70zM227 43h89v74h-89zM431 31h110v90H431zM584 40h91v82h-91zM84 227h108v85H84zM234 235h84v69h-84zM441 230h88v88h-88zM579 221h112v86H579z"/></g><g fill="none" stroke="#eaf0e3" stroke-width="3"><path d="M84 48h86v64H84zM241 57h62v47h-62zM446 45h80v61h-80zM599 54h60v54h-60zM98 240h80v58H98zM248 249h56v42h-56zM455 244h59v60h-59zM594 235h82v58h-82z"/></g><g id="change-area"><path d="M186 58h40v67h-40z" fill="#dba868" stroke="#ae793c" stroke-width="2"/><rect x="58" y="23" width="180" height="115" rx="3" fill="#e8b765" fill-opacity=".13" stroke="#b7823d" stroke-width="2" stroke-dasharray="7 4"/></g><g fill="#a7bd97"><circle cx="41" cy="70" r="15"/><circle cx="49" cy="113" r="11"/><circle cx="559" cy="279" r="14"/><circle cx="706" cy="96" r="17"/></g></g><g transform="translate(166 57)"><rect width="105" height="28" rx="5" fill="#fffdf7"/><text x="12" y="19" fill="#795322" font-size="12" font-family="sans-serif">A-01 검토 대상</text></g><g transform="translate(709 265)" fill="#4a6653"><path d="M0 23L7 0l7 23-7-5z"/><text x="3" y="-9" font-size="11">N</text></g></svg><div class="map-legend"><span><i class="legend-square normal"></i>건축물 영역</span><span><i class="legend-square changed"></i>변화 의심 영역</span><span id="period-label">현재 시점 · 변화 영역 표시 중</span></div></div><aside class="inspection"><div class="inspection-top"><span class="eyebrow">REVIEW PANEL</span><span class="status">검토 필요</span></div><h3>A-01 <span>건축물 변화 후보</span></h3><dl><div><dt>탐지 유형</dt><dd id="detect-type">외곽 면적 변화</dd></div><div><dt>비교 대상</dt><dd>이전 / 현재 촬영 영상</dd></div><div><dt>추가 확인</dt><dd>건축물 자료 대조</dd></div></dl><div class="review-note"><strong>AI가 찾는 것은 ‘변화’입니다.</strong><p>촬영 각도·그림자·가림으로도 차이가 생길 수 있습니다. 의심 영역은 자료 대조와 사람의 검토를 거쳐 판단합니다.</p></div><a href="meeting.html">우리가 정해야 할 검토 기준 <span>↗</span></a></aside></div></section>
-<nav class="page-navigation" aria-label="페이지 이동"><a href="project.html"><small>이전 페이지</small><span>← 프로젝트 소개</span></a><a href="roadmap.html"><small>다음 페이지</small><span>개발 계획 →</span></a></nav></main><footer><a class="brand" href="index.html">URBAN<span class="brand-light">SCAN</span></a><p>작은 시범 구역에서 시작하는, 더 나은 도시 관찰.</p><span>RESEARCH PLAN · v0.2</span></footer></body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="대학생 공동 연구 프로젝트: 드론 항공촬영과 AI를 활용한 건축물 변화 탐지. 프로젝트 킥오프 회의 자료 및 논의 공간."
+    />
+    <title>분석 데모 | BUILDINGSCAN</title>
+    <link rel="icon" type="image/svg+xml" href="building-scan-mark.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">본문 바로가기</a>
+    <header class="header">
+      <a class="brand" href="index.html" aria-label="BUILDINGSCAN 홈"
+        ><img
+          class="brand-mark"
+          src="building-scan-mark.svg"
+          width="48"
+          height="48"
+          alt=""
+        /><span class="brand-wordmark"
+          >BUILDING<span class="brand-light">SCAN</span></span
+        ></a
+      >
+      <nav aria-label="주요 메뉴">
+        <a href="index.html">홈</a><a href="project.html">프로젝트 소개</a
+        ><a href="analysis.html" aria-current="page">분석 데모</a
+        ><a href="roadmap.html">개발 계획</a
+        ><a href="meeting.html">회의 공간</a>
+      </nav>
+      <span class="header-draft">연구·개발계획 v0.2</span>
+    </header>
+    <main id="main-content">
+      <div class="page-intro">
+        <div class="breadcrumb">
+          <a href="index.html">홈</a><span aria-hidden="true">/</span
+          ><span>분석 데모</span>
+        </div>
+        <div class="eyebrow">BUILDINGSCAN / 02</div>
+        <h1>두 시점을 비교하며 변화를 살펴보세요</h1>
+        <p>가상 시범 구역으로 탐지 결과와 검토 흐름을 미리 경험합니다.</p>
+      </div>
+      <section class="section demo-section" id="demo">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">02 / PRODUCT CONCEPT</div>
+            <h2>이런 분석 도구를 함께 만듭니다</h2>
+          </div>
+          <span class="outline-badge">설명용 예시 · 실제 AI 분석 아님</span>
+        </div>
+        <div class="demo">
+          <div class="demo-map">
+            <div class="map-toolbar">
+              <span>시범 구역 A <small>가상 데이터</small></span>
+              <div class="segmented" aria-label="시점 선택">
+                <button data-period="before" aria-pressed="false">
+                  이전 시점</button
+                ><button class="active" data-period="after" aria-pressed="true">
+                  현재 시점
+                </button>
+              </div>
+            </div>
+            <svg
+              id="analysis-map"
+              viewBox="0 0 760 350"
+              role="img"
+              aria-label="가상 시범 구역의 건축물 배치와 변화 영역"
+            >
+              <defs>
+                <pattern
+                  id="map-grid"
+                  width="26"
+                  height="26"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <path
+                    d="M26 0H0V26"
+                    fill="none"
+                    stroke="#dce1d7"
+                    stroke-width=".8"
+                  />
+                </pattern>
+              </defs>
+              <rect width="760" height="350" fill="#e9ede3" />
+              <rect width="760" height="350" fill="url(#map-grid)" />
+              <g transform="rotate(-12 380 175)">
+                <path
+                  d="M0 176H800M380-80V450"
+                  stroke="#fffef7"
+                  stroke-width="40"
+                />
+                <path
+                  d="M0 176H800M380-80V450"
+                  stroke="#c7cec2"
+                  stroke-width="1"
+                  stroke-dasharray="8 8"
+                />
+                <g fill="#c7d1bf" stroke="#a5b59d" stroke-width="2">
+                  <path
+                    d="M70 35h115v90H70zM227 43h89v74h-89zM431 31h110v90H431zM584 40h91v82h-91zM84 227h108v85H84zM234 235h84v69h-84zM441 230h88v88h-88zM579 221h112v86H579z"
+                  />
+                </g>
+                <g fill="none" stroke="#eaf0e3" stroke-width="3">
+                  <path
+                    d="M84 48h86v64H84zM241 57h62v47h-62zM446 45h80v61h-80zM599 54h60v54h-60zM98 240h80v58H98zM248 249h56v42h-56zM455 244h59v60h-59zM594 235h82v58h-82z"
+                  />
+                </g>
+                <g id="change-area">
+                  <path
+                    d="M186 58h40v67h-40z"
+                    fill="#dba868"
+                    stroke="#ae793c"
+                    stroke-width="2"
+                  />
+                  <rect
+                    x="58"
+                    y="23"
+                    width="180"
+                    height="115"
+                    rx="3"
+                    fill="#e8b765"
+                    fill-opacity=".13"
+                    stroke="#b7823d"
+                    stroke-width="2"
+                    stroke-dasharray="7 4"
+                  />
+                </g>
+                <g fill="#a7bd97">
+                  <circle cx="41" cy="70" r="15" />
+                  <circle cx="49" cy="113" r="11" />
+                  <circle cx="559" cy="279" r="14" />
+                  <circle cx="706" cy="96" r="17" />
+                </g>
+              </g>
+              <g transform="translate(166 57)">
+                <rect width="105" height="28" rx="5" fill="#fffdf7" />
+                <text
+                  x="12"
+                  y="19"
+                  fill="#795322"
+                  font-size="12"
+                  font-family="sans-serif"
+                >
+                  A-01 검토 대상
+                </text>
+              </g>
+              <g transform="translate(709 265)" fill="#4a6653">
+                <path d="M0 23L7 0l7 23-7-5z" />
+                <text x="3" y="-9" font-size="11">N</text>
+              </g>
+            </svg>
+            <div class="map-legend">
+              <span><i class="legend-square normal"></i>건축물 영역</span
+              ><span><i class="legend-square changed"></i>변화 의심 영역</span
+              ><span id="period-label">현재 시점 · 변화 영역 표시 중</span>
+            </div>
+          </div>
+          <aside class="inspection">
+            <div class="inspection-top">
+              <span class="eyebrow">REVIEW PANEL</span
+              ><span class="status">검토 필요</span>
+            </div>
+            <h3>A-01 <span>건축물 변화 후보</span></h3>
+            <dl>
+              <div>
+                <dt>탐지 유형</dt>
+                <dd id="detect-type">외곽 면적 변화</dd>
+              </div>
+              <div>
+                <dt>비교 대상</dt>
+                <dd>이전 / 현재 촬영 영상</dd>
+              </div>
+              <div>
+                <dt>추가 확인</dt>
+                <dd>건축물 자료 대조</dd>
+              </div>
+            </dl>
+            <div class="review-note">
+              <strong>AI가 찾는 것은 ‘변화’입니다.</strong>
+              <p>
+                촬영 각도·그림자·가림으로도 차이가 생길 수 있습니다. 의심 영역은
+                자료 대조와 사람의 검토를 거쳐 판단합니다.
+              </p>
+            </div>
+            <a href="meeting.html">우리가 정해야 할 검토 기준 <span>↗</span></a>
+          </aside>
+        </div>
+      </section>
+      <nav class="page-navigation" aria-label="페이지 이동">
+        <a href="project.html"
+          ><small>이전 페이지</small><span>← 프로젝트 소개</span></a
+        ><a href="roadmap.html"
+          ><small>다음 페이지</small><span>개발 계획 →</span></a
+        >
+      </nav>
+    </main>
+    <footer>
+      <a class="brand" href="index.html" aria-label="BUILDINGSCAN 홈"
+        ><img
+          class="brand-mark"
+          src="building-scan-mark.svg"
+          width="48"
+          height="48"
+          alt=""
+        /><span class="brand-wordmark"
+          >BUILDING<span class="brand-light">SCAN</span></span
+        ></a
+      >
+      <p>작은 시범 구역에서 시작하는, 더 나은 도시 관찰.</p>
+      <span>RESEARCH PLAN · v0.2</span>
+    </footer>
+  </body>
+</html>

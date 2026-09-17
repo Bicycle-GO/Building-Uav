@@ -1,4 +1,4 @@
-# URBAN SCAN — Building-Uav
+# BUILDINGSCAN — Building-Uav
 
 AI·GIS·GNSS 기반 농지 건축물 점유 후보 탐지와 현황–기록 불일치 진단을 위한 연구·회의자료 사이트입니다.
 
