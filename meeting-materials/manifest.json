@@ -1,0 +1,102 @@
+[
+  {
+    "number": 1,
+    "title": "AI·GIS·GNSS 플랫폼 체계도",
+    "originalName": "1.png",
+    "file": "01.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2064055,
+    "sha256": "a58ccc54ef22a5a5c5ae61f83185dcfe7288613dffeb522c801f2e376ee61a18"
+  },
+  {
+    "number": 2,
+    "title": "문제 정의와 추진 배경",
+    "originalName": "2.png",
+    "file": "02.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2040039,
+    "sha256": "4f2577c82b65edd40481c82266e371254096d2ede28683c32a5be054c38d0051"
+  },
+  {
+    "number": 3,
+    "title": "데이터 역할 구분",
+    "originalName": "3.png",
+    "file": "03.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 1982102,
+    "sha256": "04aa19ccc470afadd4f4cb4a36a5ee6702e6796049670b181a36e27ea91bc5aa"
+  },
+  {
+    "number": 4,
+    "title": "AI 건축물 학습·추론 과정",
+    "originalName": "4.png",
+    "file": "04.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2106858,
+    "sha256": "da14cdc634419eff021d212b4d2754f80707ff03bac15247f1920af870f22f75"
+  },
+  {
+    "number": 5,
+    "title": "GIS 점유면적·점유율 계산",
+    "originalName": "5.png",
+    "file": "05.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2120223,
+    "sha256": "f002bc4c6056811b40efa04b690f7447387bd5af2a2d3ea417aeb59dc314ecc9"
+  },
+  {
+    "number": 6,
+    "title": "GNSS 검증과 공간불확실성",
+    "originalName": "6.png",
+    "file": "06.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2076905,
+    "sha256": "b3f33d8a543e168fcf4a340f76c094ec0cbf205cc7cc9b29b114b5653b147d7f"
+  },
+  {
+    "number": 7,
+    "title": "플랫폼 구조와 데이터 흐름",
+    "originalName": "7.png",
+    "file": "07.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 1886550,
+    "sha256": "615c7982313c507b31e6cb5840b81c6dfc52038ea2b3566de1dc5be42bb790eb"
+  },
+  {
+    "number": 8,
+    "title": "학생·LX·지도교수 역할",
+    "originalName": "8.png",
+    "file": "08.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2084040,
+    "sha256": "a2a2c7badc6435ec34da4ce19d432b3e35eca3d05e7dada769db93dddfad1df8"
+  },
+  {
+    "number": 9,
+    "title": "14주 캡스톤 로드맵",
+    "originalName": "9.png",
+    "file": "09.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2063960,
+    "sha256": "32efd0eaa497bd28147626db3780432e1359ccd3d278c9b5315458573b9a3af6"
+  },
+  {
+    "number": 10,
+    "title": "기대성과와 회의 포인트",
+    "originalName": "10.png",
+    "file": "10.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2133758,
+    "sha256": "81107247ebd60ca947551f3fb62d2672104fc8aa3f776cbe9ed9268625031641"
+  }
+]
