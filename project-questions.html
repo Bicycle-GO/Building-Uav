@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="AI·GIS·GNSS 기반 농지 건축물 점유 후보 탐지, 현황–기록 불일치 진단 및 검증행동 지원 연구."
+    />
+    <title>연구질문 | BUILDINGSCAN</title>
+    <link rel="icon" type="image/svg+xml" href="building-scan-mark.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="research.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">본문 바로가기</a>
+    <header class="header">
+      <a class="brand" href="index.html" aria-label="BUILDINGSCAN 홈"
+        ><img
+          class="brand-mark"
+          src="building-scan-mark.svg"
+          width="48"
+          height="48"
+          alt=""
+        /><span class="brand-wordmark"
+          >BUILDING<span class="brand-light">SCAN</span></span
+        ></a
+      >
+      <nav aria-label="주요 메뉴">
+        <a href="index.html">홈</a
+        ><a href="project.html" aria-current="true">프로젝트 소개</a
+        ><a href="analysis.html">분석 데모</a
+        ><a href="roadmap.html">개발 계획</a
+        ><a href="meeting.html">회의 공간</a>
+      </nav>
+      <span class="header-draft">연구·개발계획 v0.2</span>
+    </header>
+    <main id="main-content" class="research-page">
+<div class="page-intro"><div class="breadcrumb"><a href="index.html">홈</a><span aria-hidden="true">/</span><a href="project.html">프로젝트 소개</a><span aria-hidden="true">/</span><span>연구질문</span></div><div class="eyebrow">BUILDINGSCAN / PROJECT / 06</div><h1>연구질문</h1><p>연구 가설, 비교방법과 성과를 검증할 평가지표를 살펴봅니다.</p></div><nav class="section-nav project-topics" aria-label="프로젝트 소개 주제">
+<a href="project-purpose.html">연구 방향</a>
+<a href="project-strategy.html">전략체계</a>
+<a href="project-data.html">데이터 역할</a>
+<a href="project-pipeline.html">분석 과정</a>
+<a href="project-diagnosis.html">불일치 진단</a>
+<a href="project-questions.html" aria-current="page">연구질문</a>
+<a href="project-sources.html">학습자료</a>
+</nav>
+<section class="section research-section" id="questions">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">06 / RESEARCH QUESTIONS</div>
+            <h2>학생 연구가 검증해야 할 질문</h2>
+          </div>
+        </div>
+        <div
+          class="table-scroll"
+          tabindex="0"
+          role="region"
+          aria-label="연구질문 · 가설 상세표"
+        >
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">연구질문 · 가설</th>
+                <th scope="col">비교방법</th>
+                <th scope="col">평가지표</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">RQ1. 농촌 건축물을 안정적으로 추출하는가?</th>
+                <td>
+                  같은 라벨·공간 분할로 기준모델 평가. 여건이 되면 U-Net과
+                  YOLO-Seg 등을 비교
+                </td>
+                <td>Precision · Recall · F1 · IoU, 객체유형별 오탐·미탐</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  RQ2. 경계 의미와 위치오차를 구분하면 잘못된 중첩이 줄어드는가?
+                </th>
+                <td>단순 중첩 vs 지붕/지상 구분 + 독립 기준자료 검증</td>
+                <td>필지별 오탐률, 위치 RMSE, 중첩면적 MAE</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  RQ3. 원인 진단이 다음 확인행동을 개선하는가?
+                </th>
+                <td>A: 지도·면적 / B: A+원인 유형 / C: B+근거·행동 추천</td>
+                <td>전문가 합의 대비 추천 적합률, 판단 변경률, 미확정 처리</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  RQ4. 같은 조사자원으로 검토효율이 높아지는가?
+                </th>
+                <td>
+                  동일 사례와 정답 기준, 업무 순서 교차 배정. 후보와 비후보 표본
+                  모두 독립 확인
+                </td>
+                <td>사례당 검토시간, 불필요한 방문 수, Precision@K·Recall@K</td>
+              </tr>
+              <tr>
+                <th scope="row">확장 RQ. 불확실성·시계열이 도움이 되는가?</th>
+                <td>
+                  자료가 확보될 때 위치오차 모의실험, 다중시기 지속성 비교
+                </td>
+                <td>모의구간 포함률·폭, 임계값 민감도, 지역 간 성능 차이</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="research-note">
+          개선 효과는 검증할 가설입니다. 현재 정확도·비용 절감·점유확률 성과를
+          측정한 상태가 아닙니다. 공간적으로 가까운 영상이 학습과 시험에 섞이지
+          않도록 지역 단위로 분리하고, 최종 시험자료는 재학습에 사용하지
+          않습니다.
+        </div>
+      </section>
+<nav class="page-navigation" aria-label="페이지 이동"><a href="project-diagnosis.html"><small>이전 페이지</small><span>← 불일치 진단</span></a><a href="project.html"><small>프로젝트 소개</small><span>전체 주제</span></a><a href="project-sources.html"><small>다음 페이지</small><span>학습자료 →</span></a></nav>
+    </main>
+    <footer>
+      <a class="brand" href="index.html" aria-label="BUILDINGSCAN 홈"
+        ><img
+          class="brand-mark"
+          src="building-scan-mark.svg"
+          width="48"
+          height="48"
+          alt=""
+        /><span class="brand-wordmark"
+          >BUILDING<span class="brand-light">SCAN</span></span
+        ></a
+      >
+      <p>AI는 찾고, GIS는 계산하고, GNSS는 검증합니다.</p>
+      <span>RESEARCH PLAN · v0.2</span>
+    </footer>
+  </body>
+</html>

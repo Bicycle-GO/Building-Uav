@@ -13,6 +13,8 @@ const files = {
 };
 for (const page of ["project", "analysis", "roadmap", "meeting"])
   files[`/${page}.html`] = [`${page}.html`, "text/html"];
+for (const topic of ["purpose", "strategy", "data", "pipeline", "diagnosis", "questions", "sources"])
+  files[`/project-${topic}.html`] = [`project-${topic}.html`, "text/html"];
 for (let i = 1; i <= 10; i++) {
   const n = String(i).padStart(2, "0");
   files[`/meeting-materials/${n}.png`] = [

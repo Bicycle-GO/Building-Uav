@@ -8,7 +8,14 @@ Node.js에서 `node preview.js`를 실행하고 http://127.0.0.1:4173 에 접속
 
 ## 페이지
 
-- `project.html`: 미션·비전, 5대 전략/15개 과제, 4종 데이터 역할, 분석 과정, 점유 지표, 불일치 진단, 연구질문, 참고자료
+- `project.html`: 프로젝트 소개 및 7개 주제별 상세 페이지 안내
+- `project-purpose.html`: 연구 방향과 서비스 원칙
+- `project-strategy.html`: 미션·비전, 5대 전략/15개 과제
+- `project-data.html`: 4종 데이터 역할
+- `project-pipeline.html`: 분석 과정과 점유 지표
+- `project-diagnosis.html`: 불일치 진단과 확인행동
+- `project-questions.html`: 연구질문, 비교방법, 평가지표
+- `project-sources.html`: 학습자료 및 참고 원문 링크
 - `roadmap.html`: 14주/5개 완료 관문, MVP 범위, 시스템 구성, 평가설계, 역할·장비, 첫 주 실행, 최종 산출물
 - `meeting.html`: 기존 안건·메모·역할 UI를 제거한 회의자료 폴더. 10장 순서 보기, 확대, 개별 원본/ZIP 다운로드
 - `analysis.html`: 기존 설명용 가상 분석 데모

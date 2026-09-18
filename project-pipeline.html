@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="AI·GIS·GNSS 기반 농지 건축물 점유 후보 탐지, 현황–기록 불일치 진단 및 검증행동 지원 연구."
+    />
+    <title>분석 과정 | BUILDINGSCAN</title>
+    <link rel="icon" type="image/svg+xml" href="building-scan-mark.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="research.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">본문 바로가기</a>
+    <header class="header">
+      <a class="brand" href="index.html" aria-label="BUILDINGSCAN 홈"
+        ><img
+          class="brand-mark"
+          src="building-scan-mark.svg"
+          width="48"
+          height="48"
+          alt=""
+        /><span class="brand-wordmark"
+          >BUILDING<span class="brand-light">SCAN</span></span
+        ></a
+      >
+      <nav aria-label="주요 메뉴">
+        <a href="index.html">홈</a
+        ><a href="project.html" aria-current="true">프로젝트 소개</a
+        ><a href="analysis.html">분석 데모</a
+        ><a href="roadmap.html">개발 계획</a
+        ><a href="meeting.html">회의 공간</a>
+      </nav>
+      <span class="header-draft">연구·개발계획 v0.2</span>
+    </header>
+    <main id="main-content" class="research-page">
+<div class="page-intro"><div class="breadcrumb"><a href="index.html">홈</a><span aria-hidden="true">/</span><a href="project.html">프로젝트 소개</a><span aria-hidden="true">/</span><span>분석 과정</span></div><div class="eyebrow">BUILDINGSCAN / PROJECT / 04</div><h1>분석 과정</h1><p>AI·GIS·GNSS를 연결하는 분석 단계와 계산 기준을 확인합니다.</p></div><nav class="section-nav project-topics" aria-label="프로젝트 소개 주제">
+<a href="project-purpose.html">연구 방향</a>
+<a href="project-strategy.html">전략체계</a>
+<a href="project-data.html">데이터 역할</a>
+<a href="project-pipeline.html" aria-current="page">분석 과정</a>
+<a href="project-diagnosis.html">불일치 진단</a>
+<a href="project-questions.html">연구질문</a>
+<a href="project-sources.html">학습자료</a>
+</nav>
+<section class="section research-section" id="pipeline">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">04 / ANALYSIS</div>
+            <h2>탐지에서 필지별 근거까지</h2>
+          </div>
+        </div>
+        <ol class="flow-steps">
+          <li><b>영상·필지 준비</b><span>출처 · 좌표계 · 시점</span></li>
+          <li><b>AI 영역 추출</b><span>마스크 → 폴리곤</span></li>
+          <li><b>GIS 중첩</b><span>면적 · 비율 산출</span></li>
+          <li><b>원인 진단</b><span>기록 · 경계 · 시간</span></li>
+          <li><b>현장 검증</b><span>오차 · 근거 보완</span></li>
+          <li><b>담당자 검토</b><span>다음 행동 · 이력</span></li>
+        </ol>
+        <div class="research-cards">
+          <article>
+            <span class="card-number">01</span>
+            <h3>Aocc · 점유면적</h3>
+            <p>
+              <code>Area(B ∩ F)</code><br />건축물 B와 필지 F가 겹치는
+              면적입니다. 영상에서 지붕을 추출했다면 “지붕 투영 중첩면적”임을
+              표시합니다.
+            </p>
+          </article>
+          <article>
+            <span class="card-number">02</span>
+            <h3>POR · 필지점유율</h3>
+            <p>
+              <code>Aocc ÷ Area(F) × 100</code><br />한 필지에서 건축물이
+              차지하는 비율입니다. 여러 건물이 중복되면 합집합 면적으로 계산해
+              중복 집계를 막습니다.
+            </p>
+          </article>
+          <article>
+            <span class="card-number">03</span>
+            <h3>BIR · 건축물 중첩비율</h3>
+            <p>
+              <code>Aocc ÷ Area(B) × 100</code><br />건축물 중 해당 농지필지에
+              포함되는 비율입니다. 필지별 값과 전체 농지에 대한 값을 구분합니다.
+            </p>
+          </article>
+        </div>
+        <div class="research-note">
+          <strong>설명용 계산 예시</strong> 필지 1,200㎡, 건축물 80㎡, 중첩
+          36㎡라면 POR는 3.0%, BIR는 45.0%입니다. 실제 조사결과가 아닙니다.
+          면적은 대상지역에 적합한 미터 단위 투영좌표계에서 계산합니다.
+        </div>
+        <details class="research-detail">
+          <summary>심화 연구: 점유확률과 면적의 불확실성</summary>
+          <p>
+            독립 기준점에서 추정한 위치오차 분포를 바탕으로 공간중첩을 반복
+            계산합니다. N번 중첩면적 Aₖ 중 기준면적 τ를 넘는 비율
+            <code>Pocc = Σ I(Aₖ &gt; τ) / N</code>과 면적 분포의 2.5~97.5 백분위
+            범위를 함께 제시합니다.
+          </p>
+          <p>
+            이 범위는 우선
+            <strong>가정한 오차모형에 따른 95% 모의구간</strong>으로 부릅니다.
+            실제 점유확률이나 통계적 신뢰구간으로 해석하려면 독립 검증자료에
+            대한 보정·포함률 평가가 필요합니다. 영상과 필지 오차의 상관관계, AI
+            경계오차, 지붕–벽체 차이를 따로 검토합니다.
+          </p>
+          <p>
+            의심 건물에 맞춰 지적경계를 옮기지 않습니다. 원본과 분석용 보정본을
+            분리하고, GNSS 현황 관측을 필지의 법적 경계 확정과 혼동하지
+            않습니다.
+          </p>
+        </details>
+      </section>
+<nav class="page-navigation" aria-label="페이지 이동"><a href="project-data.html"><small>이전 페이지</small><span>← 데이터 역할</span></a><a href="project.html"><small>프로젝트 소개</small><span>전체 주제</span></a><a href="project-diagnosis.html"><small>다음 페이지</small><span>불일치 진단 →</span></a></nav>
+    </main>
+    <footer>
+      <a class="brand" href="index.html" aria-label="BUILDINGSCAN 홈"
+        ><img
+          class="brand-mark"
+          src="building-scan-mark.svg"
+          width="48"
+          height="48"
+          alt=""
+        /><span class="brand-wordmark"
+          >BUILDING<span class="brand-light">SCAN</span></span
+        ></a
+      >
+      <p>AI는 찾고, GIS는 계산하고, GNSS는 검증합니다.</p>
+      <span>RESEARCH PLAN · v0.2</span>
+    </footer>
+  </body>
+</html>
