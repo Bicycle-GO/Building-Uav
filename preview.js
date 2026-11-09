@@ -13,6 +13,9 @@ const files = {
   "/theme.css": ["theme.css", "text/css"],
   "/home-motion.css": ["home-motion.css", "text/css"],
   "/home-motion.js": ["home-motion.js", "application/javascript"],
+  "/home-extraction.css": ["home-extraction.css", "text/css"],
+  "/home-assets/field-orthophoto.jpg": ["home-assets/field-orthophoto.jpg", "image/jpeg"],
+  "/home-assets/field-scene.json": ["home-assets/field-scene.json", "application/json"],
   "/analysis-motion.css": ["analysis-motion.css", "text/css"],
   "/analysis-motion.js": ["analysis-motion.js", "application/javascript"],
   "/meeting-hub.css": ["meeting-hub.css", "text/css"],
@@ -50,6 +53,9 @@ files["/meeting-materials/1109/농지_건축물_의심조사서_A4.pdf"] = [
 ];
 files["/meeting-materials/1109/농지_건축물_의심조사서_A4_편집용.hwpx"] = [
   "meeting-materials/1109/농지_건축물_의심조사서_A4_편집용.hwpx", "application/hwp+zip",
+];
+files["/meeting-materials/1109/수정사항_20261110.pptx"] = [
+  "meeting-materials/1109/수정사항_20261110.pptx", "application/vnd.openxmlformats-officedocument.presentationml.presentation",
 ];
 http
   .createServer((req, res) => {

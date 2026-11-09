@@ -1,145 +1,55 @@
 <!doctype html>
 <html lang="ko"><head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="description" content="AI·GIS·GNSS로 농지의 변화를 살피고, 조사 근거와 회의자료를 함께 나누는 BUILDINGSCAN 연구 플랫폼."/><meta name="theme-color" content="#173d33"/>
-<title>홈 | BUILDINGSCAN</title><link rel="icon" type="image/svg+xml" href="building-scan-mark.svg"/><link rel="stylesheet" href="styles.css"/><link rel="stylesheet" href="research.css"/><link rel="stylesheet" href="theme.css"/><link rel="stylesheet" href="home-motion.css"/><script src="home-motion.js" defer></script></head>
+<title>홈 | BUILDINGSCAN</title><link rel="icon" type="image/svg+xml" href="building-scan-mark.svg"/><link rel="stylesheet" href="styles.css"/><link rel="stylesheet" href="research.css"/><link rel="stylesheet" href="theme.css"/><link rel="stylesheet" href="home-motion.css"/><link rel="stylesheet" href="home-extraction.css"/><link rel="preload" as="image" href="home-assets/field-orthophoto.jpg"/><script src="home-motion.js" defer></script></head>
 <body><a class="skip-link" href="#main-content">본문 바로가기</a><header class="header"><a class="brand" href="index.html" aria-label="BUILDINGSCAN 홈"><img class="brand-mark" src="building-scan-mark.svg" width="42" height="42" alt=""/><span class="brand-wordmark">BUILDING<span class="brand-light">SCAN</span></span></a><nav aria-label="주요 메뉴"><a href="index.html" aria-current="page">홈</a><a href="project.html">프로젝트 소개</a><a href="analysis.html">분석 데모</a><a href="roadmap.html">개발 계획</a><a href="meeting.html">회의자료</a></nav></header>
-<main id="main-content"><section class="home-hero" aria-labelledby="hero-heading"><div class="hero-copy"><div class="eyebrow"><span class="live-dot"></span>FROM FIELD TO DECISION <span class="eyebrow-line"></span>2026</div><h1 id="hero-heading">농지의 변화를 발견하고,<br/><em>함께 다음을 결정하다.</em></h1><p class="intro">AI가 찾은 작은 변화를 공간정보로 확인합니다.<br/>탐지부터 조사, 논의까지. 근거를 함께 보고<br class="desktop-break"/> 더 명확한 다음 행동으로 연결합니다.</p><div class="hero-buttons"><a class="button primary" href="analysis.html">분석 데모 시작 <span aria-hidden="true">↗</span></a><a class="button secondary" href="meeting.html#1109">1109 회의자료 <span aria-hidden="true">→</span></a></div><div class="hero-meta"><span><i class="tiny-dot"></i> AI · GIS · GNSS</span><span>연구·개발 프로젝트</span><span>최종 판단은 사람이</span></div></div><div class="home-hero-visual"><div class="field-player" data-stage="1"><div class="field-player-top"><span><span class="live-dot"></span>FIELD INTELLIGENCE / 농지 변화 탐색</span><button type="button" data-home-play aria-label="모션 인포그래픽 재생 전환" aria-pressed="true">Ⅱ 일시정지</button></div><svg
-            class="field-map"
-            viewBox="0 0 640 390"
-            role="img"
-            aria-label="AI 탐지, GIS 중첩, GNSS 검증으로 이어지는 농지 건축물 조사 개념도. 실제 지도가 아닙니다."
-          >
-            <defs>
-              <pattern
-                id="grid"
-                width="32"
-                height="32"
-                patternUnits="userSpaceOnUse"
-              >
-                <path
-                  d="M32 0H0V32"
-                  fill="none"
-                  stroke="#3c6248"
-                  stroke-width=".6"
-                />
-              </pattern>
-              <linearGradient id="bg" x2="1" y2="1">
-                <stop stop-color="#1c4838" />
-                <stop offset="1" stop-color="#173f32" />
-              </linearGradient>
-              <filter id="shadow">
-                <feDropShadow
-                  dx="7"
-                  dy="10"
-                  stdDeviation="6"
-                  flood-color="#344d38"
-                  flood-opacity=".15"
-                />
-              </filter>
-            </defs>
-            <rect width="640" height="390" fill="url(#bg)" />
-            <rect width="640" height="390" fill="url(#grid)" />
-            <g
-              transform="translate(308 188) rotate(-29) skewX(22) translate(-280 -170)"
-            >
-              <path
-                d="M-80 150H690M270 -100V490"
-                stroke="#284f3b"
-                stroke-width="49"
-              />
-              <path
-                d="M-80 150H690M270 -100V490"
-                stroke="#315540"
-                stroke-width="35"
-              />
-              <path
-                d="M-80 150H690M270 -100V490"
-                stroke="#709169"
-                stroke-dasharray="8 8"
-                fill="none"
-              />
-              <g fill="#355b40" stroke="#55764f" stroke-width="4">
-                <rect x="18" y="-5" width="94" height="89" />
-                <rect x="135" y="-20" width="81" height="111" />
-                <rect x="323" y="-27" width="119" height="91" />
-                <rect x="474" y="-12" width="88" height="103" />
-                <rect x="13" y="220" width="101" height="101" />
-                <rect x="142" y="225" width="83" height="71" />
-                <rect x="330" y="230" width="87" height="116" />
-                <rect x="459" y="223" width="108" height="90" />
-              </g>
-              <g
-                fill="#8da279"
-                stroke="#b7c494"
-                stroke-width="1.5"
-                filter="url(#shadow)"
-              >
-                <path
-                  d="M30 8h66v58H30zM146 -8h53v73h-53zM341 -13h82v52h-82zM488 4h56v63h-56zM28 235h64v59H28zM152 236h55v43h-55zM345 244h55v71h-55zM474 237h76v51h-76z"
-                />
-              </g>
-              <g fill="none" stroke="#c7d0a7" stroke-width="2">
-                <path
-                  d="M39 17h48v40H39zM157 1h31v53h-31zM351 -3h62v31h-62zM498 14h36v43h-36zM38 245h44v39H38zM355 254h35v51h-35zM484 247h56v31h-56z"
-                />
-              </g>
-              <path class="home-target" d="M153 235h56v45h-56z" fill="#d1bb7d" stroke="#ead69a" />
-              <rect
-                x="137"
-                y="221"
-                width="88"
-                height="74"
-                rx="2"
-                fill="#e2d18f"
-                fill-opacity=".2"
-                stroke="#d8c17f"
-                stroke-width="2"
-                stroke-dasharray="6 4"
-              />
-              <g fill="#64825a">
-                <circle cx="36" cy="111" r="11" />
-                <circle cx="75" cy="110" r="10" />
-                <circle cx="371" cy="87" r="12" />
-                <circle cx="412" cy="90" r="9" />
-                <circle cx="439" cy="255" r="9" />
-                <circle cx="431" cy="301" r="10" />
-                <circle cx="124" cy="337" r="11" />
-              </g>
-            </g>
-            <path
-              d="M400 107L319 226L164 199Z"
-              fill="#badb9c"
-              fill-opacity=".08"
-              stroke="#99b883"
-              stroke-dasharray="4 5"
-            />
-            <g class="home-drone"><g
-              transform="translate(400 101)"
-              stroke="#c7d7a7"
-              fill="#345d42"
-              stroke-width="3"
-            >
-              <path d="M-18-10L18 10M-18 10L18-10" />
-              <ellipse cx="-22" cy="-13" rx="12" ry="5" />
-              <ellipse cx="22" cy="-13" rx="12" ry="5" />
-              <ellipse cx="-22" cy="13" rx="12" ry="5" />
-              <ellipse cx="22" cy="13" rx="12" ry="5" />
-              <rect
-                x="-9"
-                y="-8"
-                width="18"
-                height="16"
-                rx="5"
-                fill="#c7d7a7"
-              />
-            </g></g>
-            <path
-              d="M25 48V25h23M592 25h23v23M615 342v23h-23M48 365H25v-23"
-              fill="none"
-              stroke="#809f70"
-              stroke-width="1.4"
-            />
-          <g class="home-gis-layer" transform="translate(308 188) rotate(-29) skewX(22) translate(-280 -170)" fill="none" stroke="#c1d7a4" stroke-width="2"><rect x="135" y="220" width="92" height="78" rx="2"/><path d="M132 218h98v83h-98z" stroke-dasharray="3 4" opacity=".4"/></g><g class="home-scan-line"><rect x="0" y="140" width="640" height="60" fill="#c6df9c" opacity=".08"/><path d="M0 200H640" stroke="#c6df9c" stroke-opacity=".55"/></g><g class="home-target-label" transform="translate(145 248)"><rect width="183" height="50" rx="7" fill="#e8edd4"/><circle cx="17" cy="18" r="3" fill="#648458"/><text x="28" y="22" fill="#3a593c" font-size="12" font-weight="600">농지 건축물 점유 후보</text><text x="14" y="39" fill="#7c906f" font-size="9">DETECTED · 자료 대조와 현장 확인</text></g><g class="home-verify" transform="translate(470 290)"><circle r="20" fill="#bed5a0" fill-opacity=".1" stroke="#a6c78f"/><path d="M-7 0l5 5 10-11" fill="none" stroke="#d4e5b5" stroke-width="2"/></g></svg><div class="field-player-bottom"><span><i></i><span data-home-label>AI가 건축물 후보를 찾습니다</span></span><span>AI → GIS → GNSS</span></div><div class="field-stages" aria-label="분석 흐름 단계"><button type="button" data-home-stage="1" aria-pressed="true"><strong>01</strong>AI 탐지</button><button type="button" data-home-stage="2" aria-pressed="false"><strong>02</strong>GIS 중첩</button><button type="button" data-home-stage="3" aria-pressed="false"><strong>03</strong>GNSS 검증</button></div></div><div class="field-caption"><span>탐지에서 검증으로 이어지는 모션 인포그래픽</span><span>설명용 개념도</span></div></div></section>
+<main id="main-content"><section class="home-hero" aria-labelledby="hero-heading"><div class="hero-copy"><div class="eyebrow"><span class="live-dot"></span>FROM FIELD TO DECISION <span class="eyebrow-line"></span>2026</div><h1 id="hero-heading">농지의 변화를 발견하고,<br/><em>함께 다음을 결정하다.</em></h1><p class="intro">AI가 찾은 작은 변화를 공간정보로 확인합니다.<br/>탐지부터 조사, 논의까지. 근거를 함께 보고<br class="desktop-break"/> 더 명확한 다음 행동으로 연결합니다.</p><div class="hero-buttons"><a class="button primary" href="analysis.html">분석 데모 시작 <span aria-hidden="true">↗</span></a><a class="button secondary" href="meeting.html#1109">1109 회의자료 <span aria-hidden="true">→</span></a></div><div class="hero-meta"><span><i class="tiny-dot"></i> AI · GIS · GNSS</span><span>연구·개발 프로젝트</span><span>최종 판단은 사람이</span></div></div><div class="home-hero-visual">
+  <div class="field-player" data-stage="1" aria-busy="true">
+    <div class="field-player-top"><span><span class="live-dot"></span>REAL ORTHOPHOTO / 지붕 표면 판독</span><button type="button" data-home-play aria-label="건물 추출 모션 일시정지" aria-pressed="true">Ⅱ 일시정지</button></div>
+    <div class="extraction-viewport">
+      <svg class="extraction-map" viewBox="0 0 640 400" role="img" aria-labelledby="extraction-map-title extraction-map-desc" style="--roof-cx:197.2px;--roof-cy:166.8px;--model-dx:311.8px;--model-dy:7.2px;--model-scale:1.1">
+        <title id="extraction-map-title">실제 정사영상에서 건물 지붕 표면을 판독하고 지붕 윤곽을 분리하는 과정</title>
+        <desc id="extraction-map-desc">드론 정사영상의 청색 지붕 표면에 스캔을 표시하고, 지붕 가장자리 네 점을 연결한 윤곽과 같은 지붕 영상을 분리하는 시연입니다. 현황 영역은 공식 필지 경계가 아닙니다.</desc>
+        <defs>
+          <path id="home-roof-path" d="M135.2 139.2L266.4 168.4L261.2 194.4L128 165.2L135.2 139.2Z" pathLength="1"/>
+          <clipPath id="home-roof-clip"><use href="#home-roof-path"/></clipPath>
+          <clipPath id="home-scan-clip"><use href="#home-roof-path"/></clipPath>
+          <linearGradient id="roof-scan-fill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d2f3ab" stop-opacity="0"/><stop offset="1" stop-color="#d2f3ab" stop-opacity=".36"/></linearGradient>
+          <linearGradient id="ortho-vignette" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#0a2d25" stop-opacity=".12"/><stop offset=".55" stop-color="#0a2d25" stop-opacity="0"/><stop offset="1" stop-color="#0a2d25" stop-opacity=".28"/></linearGradient>
+        </defs>
+        <image id="home-ortho" class="extraction-basemap" href="home-assets/field-orthophoto.jpg" width="640" height="400" preserveAspectRatio="xMidYMid meet"/>
+        <rect width="640" height="400" fill="url(#ortho-vignette)"/>
+        <polygon class="parcel-outline" points="128,132 368,181 315,396 77,336 128,132"/>
+        <path class="parcel-guide" d="M153 23L388 71L368 181M398 53L630 117M393 181L366 272L614 330"/>
+        <g transform="translate(18 17)"><rect class="scene-tag" width="130" height="25" rx="5"/><circle cx="12" cy="12" r="2.5" fill="#bcdfa2"/><text class="scene-tag-text" x="22" y="16">실제 드론 정사영상</text></g>
+        <g transform="translate(97 309)"><rect class="scene-tag" width="123" height="25" rx="5"/><path d="M10 8h8v8h-8z" fill="none" stroke="#cee8ad" stroke-dasharray="2 2"/><text class="scene-tag-text" x="25" y="16">현황 영역 · 시연 표시</text></g>
+        <g class="extraction-scan"><use href="#home-roof-path" class="scan-crosshair"/><g clip-path="url(#home-scan-clip)"><g class="scan-beam"><rect x="115" y="130" width="167" height="36" fill="url(#roof-scan-fill)"/><path d="M115 166H282" stroke="#e7f9bf" stroke-width="1.6"/></g></g></g>
+        <use href="#home-roof-path" class="roof-mask"/>
+        <use href="#home-roof-path" class="roof-trace"/>
+
+
+        <circle class="roof-vertex" cx="135.2" cy="139.2" r="2.5"/><circle class="roof-vertex" cx="266.4" cy="168.4" r="2.5"/><circle class="roof-vertex" cx="261.2" cy="194.4" r="2.5"/><circle class="roof-vertex" cx="128" cy="165.2" r="2.5"/>
+        <path class="extraction-connector" d="M270 174C335 174 355 185 407 185"/>
+        <g class="extraction-model-panel">
+          <rect class="model-panel-surface" x="407" y="35" width="214" height="258" rx="12"/>
+          <text class="model-panel-label" x="425" y="62">EXTRACTED ROOF</text><text class="model-panel-title" x="425" y="85">지붕 추출 결과</text>
+          <path class="model-grid" d="M425 228L505 205L603 230L522 255ZM450 221L548 247M478 213L576 239M451 236L531 212M477 243L558 218M502 251L585 225"/>
+          <text class="model-panel-note" x="425" y="267">영상에서 분리한 지붕 표면</text><text class="model-panel-note" x="425" y="282">지붕 가장자리와 동일한 윤곽</text>
+        </g>
+        <g class="roof-fly">
+
+
+          <image class="model-roof-image" href="home-assets/field-orthophoto.jpg" width="640" height="400" clip-path="url(#home-roof-clip)"/>
+          <use class="model-roof-edge" href="#home-roof-path"/>
+        </g>
+        <g transform="translate(604 354)"><path d="M0 20L6 0L12 20L6 16Z" fill="#e1ebcb"/><text class="scene-north" x="3" y="-6">N</text></g>
+      </svg>
+    </div>
+    <div class="extraction-stage-copy"><div><strong data-extraction-title>지붕 표면을 판독합니다</strong><span class="extraction-demo-badge">추출 과정 시연</span></div><p data-extraction-detail>실제 영상의 청색 지붕 표면을 따라 스캔합니다.</p><span data-home-label>AI 판독 과정 · 지붕 표면 탐색</span></div>
+    <div class="field-stages" aria-label="지붕 판독과 추출 단계"><button type="button" data-home-stage="1" aria-pressed="true"><strong>01</strong>지붕 판독</button><button type="button" data-home-stage="2" aria-pressed="false"><strong>02</strong>지붕 윤곽</button><button type="button" data-home-stage="3" aria-pressed="false"><strong>03</strong>지붕 분리</button></div>
+  </div>
+  <div class="field-caption"><span>실제 정사영상 · 사전 후보 기반 시연</span><span>현황 경계는 시연용</span></div>
+</div></section>
 <div class="home-proof" aria-label="프로젝트 핵심 가치"><div><span>01</span><div><strong>변화를 읽는 AI</strong><small>영상 속 건축물 후보 탐지</small></div></div><div><span>02</span><div><strong>근거를 연결하는 GIS</strong><small>필지 중첩과 점유 면적 확인</small></div></div><div><span>03</span><div><strong>논의를 잇는 회의자료</strong><small>언제든 열고, 함께 검토</small></div></div></div>
 <section class="home-meeting" aria-labelledby="meeting-heading"><div><div class="eyebrow">MEETING HUB <span class="live-dot"></span>LATEST / 1109</div><h2 id="meeting-heading">같은 자료에서, 다음 논의를 시작하세요.</h2><p>회의 전에는 미리 살펴보고, 회의 중에는 함께 확인하고, 회의 후에는 의견을 나눕니다. 조사서 원본과 편집 파일을 하나의 공간에서 언제든 열어보세요.</p><div class="home-meeting-meta"><span>A4 조사서 PDF</span><span>편집용 HWPX</span><span>링크·의견 복사</span></div></div><div class="home-meeting-actions"><a class="button primary" href="meeting.html#1109">1109 공간 열기 <span aria-hidden="true">↗</span></a><a href="meeting.html">전체 회의자료 <span aria-hidden="true">→</span></a></div></section>
 <section class="section home-tools" aria-labelledby="tools-heading"><div class="section-heading"><div><div class="eyebrow">EXPLORE BUILDINGSCAN</div><h2 id="tools-heading">필요한 기능에, 더 가까이.</h2></div><p>이해하고, 경험하고, 함께 구체화합니다.</p></div><div class="portal-grid"><a class="portal-card" href="project.html"><div class="portal-card-top"><span>01 / OVERVIEW</span><span aria-hidden="true">↗</span></div><h3>프로젝트 소개</h3><p>연구 방향부터 데이터, 분석 과정과 검증 기준까지. 프로젝트의 전체 그림을 확인합니다.</p><span class="portal-link">연구 설계 살펴보기 <span aria-hidden="true">→</span></span></a><a class="portal-card" href="analysis.html"><div class="portal-card-top"><span>02 / INTERACTIVE DEMO</span><span aria-hidden="true">↗</span></div><h3>분석 데모</h3><p>AI 탐지부터 GIS 계산, 현장 검증까지. 움직이는 지도로 분석 과정을 경험합니다.</p><span class="portal-link">분석 흐름 체험하기 <span aria-hidden="true">→</span></span></a><a class="portal-card" href="roadmap.html"><div class="portal-card-top"><span>03 / ROADMAP</span><span aria-hidden="true">↗</span></div><h3>개발 계획</h3><p>14주 일정과 단계별 완료 기준. 역할, 검증 방법과 최종 산출물을 함께 살펴봅니다.</p><span class="portal-link">개발 여정 확인하기 <span aria-hidden="true">→</span></span></a></div></section>

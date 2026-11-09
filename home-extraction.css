@@ -1,0 +1,81 @@
+/* A real orthophoto with a registered roof outline and a matching extracted model. */
+.field-player { background: #133d32; }
+.field-player-top { padding: 17px 21px; gap: 10px; }
+.field-player-top > span { letter-spacing: .09em; font-size: 9px; }
+.field-player-top button { flex-shrink: 0; min-height: 30px; }
+.extraction-viewport { position: relative; overflow: hidden; background: #263d2d; }
+.extraction-map { display: block; width: 100%; height: auto; aspect-ratio: 640 / 400; }
+.extraction-map text { font-family: "Segoe UI", "Malgun Gothic", sans-serif; letter-spacing: -.025em; }
+.extraction-basemap { filter: saturate(.78) brightness(.88); }
+.extraction-map .parcel-outline { fill: #c7e8a111; stroke: #c7e8a1; stroke-width: 1.6; stroke-dasharray: 7 5; vector-effect: non-scaling-stroke; }
+.extraction-map .parcel-guide { fill: none; stroke: #eff1d3; stroke-opacity: .4; stroke-width: .8; vector-effect: non-scaling-stroke; }
+.parcel-caption { fill: #ededd3; font-size: 10px; }
+.scene-position { fill: #e3ecd5; font-size: 10px; letter-spacing: .03em; }
+.extraction-scan { opacity: 0; }
+.field-player[data-stage="1"] .extraction-scan { opacity: 1; }
+.scan-beam { animation: roof-scan 3.6s ease-in-out infinite; }
+.scan-focus { fill: #d8eec105; stroke: #e4efcc; stroke-width: 1.5; stroke-dasharray: 14 43; }
+.scan-crosshair { fill: none; stroke: #e2efcb; stroke-opacity: .75; stroke-width: 1.3; stroke-dasharray: 3 4; }
+.roof-mask { fill: #c7ebaa; opacity: 0; transition: opacity .65s ease; }
+.roof-trace { fill: none; stroke: #d6f4af; stroke-width: 2.4; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; filter: drop-shadow(0 0 4px #b8ff9c80); transition: stroke-dashoffset 1.8s ease; }
+.roof-vertex { fill: #f2f8db; stroke: #296d49; stroke-width: 1.5; opacity: 0; transition: opacity 1.2s ease; }
+.field-player[data-stage="2"] .roof-mask { opacity: .28; }
+.field-player[data-stage="2"] .roof-trace,
+.field-player[data-stage="3"] .roof-trace { stroke-dashoffset: 0; }
+.field-player[data-stage="2"] .roof-vertex,
+.field-player[data-stage="3"] .roof-vertex { opacity: 1; }
+.field-player[data-stage="3"] .roof-trace { stroke-width: 1.5; stroke: #e5edc7; opacity: .75; }
+.extraction-connector { stroke: #e3eecb; stroke-width: 1.2; stroke-dasharray: 4 5; fill: none; opacity: 0; transition: opacity .5s ease .3s; }
+.extraction-model-panel { opacity: 0; transition: opacity .6s ease; }
+.field-player[data-stage="3"] .extraction-model-panel,
+.field-player[data-stage="3"] .extraction-connector { opacity: 1; }
+.model-panel-surface { fill: #103c32; fill-opacity: .94; stroke: #aec5a570; stroke-width: 1; }
+.model-panel-label { fill: #b7d4ae; font-size: 9px; letter-spacing: .1em; }
+.model-panel-title { fill: #f1f3d9; font-size: 14px; font-weight: 600; }
+.model-panel-note { fill: #9cb69a; font-size: 9px; }
+.model-grid { stroke: #8eb392; stroke-width: .6; opacity: .23; fill: none; }
+.roof-fly { opacity: 0; transform-box: view-box; transform-origin: var(--roof-cx) var(--roof-cy); transform: translate(0, 0) scale(1); transition: transform 1.65s cubic-bezier(.2,.65,.25,1), opacity .35s ease; }
+.field-player[data-stage="3"] .roof-fly { opacity: 1; transform: translate(var(--model-dx), var(--model-dy)) scale(var(--model-scale)); }
+.model-roof-image { filter: saturate(.75) brightness(1.23); }
+.model-roof-edge { stroke: #e7f5cd; stroke-width: 1.7; fill: none; }
+.scene-tag { fill: #143d32; fill-opacity: .9; stroke: #d5e6b840; }
+.scene-tag-text { fill: #edf0d5; font-size: 10px; }
+.scene-north { fill: #edf2d8; font-size: 9px; }
+.extraction-stage-copy { padding: 17px 22px 15px; background: #133d32; }
+.extraction-stage-copy > div { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.extraction-stage-copy strong { color: #eef2d9; font-size: 15px; font-weight: 550; letter-spacing: -.035em; }
+.extraction-stage-copy .extraction-demo-badge { font-size: 9px; color: #adc5a7; border: 1px solid #749d7355; border-radius: 4px; padding: 4px 6px; white-space: nowrap; }
+.extraction-stage-copy p { color: #9cbb9c; font-size: 11px; line-height: 1.8; margin: 7px 0 0; }
+.extraction-stage-copy [data-home-label] { display: block; color: #a9c39f; font-size: 9px; line-height: 1.6; margin-top: 8px; }
+.field-player .field-stages { margin-top: 0; }
+.field-player .field-stages button { min-height: 47px; }
+.field-player .field-stages button[aria-pressed="true"] { background: #bddea313; box-shadow: inset 0 -2px #b2cf93; }
+.field-player.is-paused .scan-beam { animation-play-state: paused; }
+.field-player .field-caption { color: #83947b; }
+@keyframes roof-scan {
+  0%, 100% { transform: translateY(-28px); opacity: .2; }
+  12% { opacity: 1; }
+  85% { transform: translateY(34px); opacity: 1; }
+  96% { opacity: .2; }
+}
+@media(max-width:1050px) {
+  .field-player-top { padding: 16px 17px; }
+  .field-player-top > span { font-size: 8px; }
+  .extraction-stage-copy { padding: 16px 18px; }
+  .extraction-stage-copy strong { font-size: 14px; }
+}
+@media(max-width:420px) {
+  .field-player-top { padding: 13px 14px; }
+  .field-player-top > span { letter-spacing: .035em; font-size: 8px; }
+  .field-player-top button { font-size: 9px; min-width: 56px; padding: 5px 7px; }
+  .extraction-stage-copy { padding: 15px; }
+  .extraction-stage-copy strong { font-size: 13px; }
+  .extraction-stage-copy p { font-size: 10px; }
+  .extraction-stage-copy .extraction-demo-badge { font-size: 8px; }
+  .model-panel-title { font-size: 20px; }
+  .model-panel-label, .model-panel-note { display: none; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .extraction-map * { animation: none !important; transition: none !important; }
+  .extraction-scan { display: none; }
+}

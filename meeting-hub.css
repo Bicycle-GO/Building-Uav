@@ -8,3 +8,4 @@
 @media print{.hub-navigation,.hub-copy-status,.hub-file-actions,.hub-space-heading>.button,.hub-feedback-actions,.hub-pdf-preview{display:none}.hub-space-layout,.hub-feedback{display:block}.hub-discussion{margin-top:20px}.hub-latest-folder{break-inside:avoid}.hub-feedback{break-inside:avoid}.hub-feedback textarea{min-height:200px}}
 .hub-navigation a:first-child{display:inline-flex}.hub-discussion li>span{flex:0 0 20px;white-space:nowrap}.material-folder{max-width:none}
 #folder-home,#folder-content,#meeting-1109{scroll-margin-top:22px}@media(max-width:700px){#folder-home,#folder-content,#meeting-1109{scroll-margin-top:12px}}
+.hub-file-icon-slides{background:#f9efe7;border-color:#ecd8c8;color:#a96937}
