@@ -11,7 +11,10 @@
     <link rel="icon" type="image/svg+xml" href="building-scan-mark.svg" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="research.css" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="meeting-hub.css" />
     <script src="app.js" defer></script>
+    <script src="meeting-hub.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">본문 바로가기</a>
@@ -31,7 +34,7 @@
         <a href="index.html">홈</a><a href="project.html">프로젝트 소개</a
         ><a href="analysis.html">분석 데모</a
         ><a href="roadmap.html">개발 계획</a
-        ><a href="meeting.html" aria-current="page">회의 공간</a>
+        ><a href="meeting.html" aria-current="page">회의자료</a>
       </nav>
       <span class="header-draft">연구·개발계획 v0.2</span>
     </header>
@@ -40,11 +43,25 @@
         <div class="breadcrumb">
           <a href="index.html">홈</a><span>/</span><span>회의 공간</span>
         </div>
-        <div class="eyebrow">BUILDINGSCAN / 04</div>
-        <h1>함께 보는 연구·회의자료</h1>
-        <p>회의자료 폴더에서 이미지 10장을 순서대로 살펴보세요.</p>
+        <div class="hub-intro-row"><div>
+          <div class="eyebrow">MEETING & COMMUNICATION</div>
+          <h1>자료를 연결하고,<br />논의를 이어가는 공간.</h1>
+          <p>회의 전에도, 회의 후에도. 같은 자료를 보며 다음 결정을 준비하세요.</p>
+        </div><a class="button primary" href="#1109">1109 최신 자료 열기 <span aria-hidden="true">↗</span></a></div>
       </div>
+      <nav class="hub-navigation" aria-label="회의자료 폴더">
+        <a href="#" data-hub-route="home">전체 자료</a>
+        <a href="#1109" data-hub-route="1109"><span class="hub-nav-dot" aria-hidden="true"></span>1109 · 조사서 검토</a>
+        <a href="#materials" data-hub-route="materials">프로젝트 기초자료 <span>10</span></a>
+        <button type="button" data-copy-meeting-link>현재 공간 링크 복사 <span aria-hidden="true">↗</span></button>
+      </nav>
+      <p id="hub-copy-status" class="hub-copy-status" role="status" aria-live="polite"></p>
       <section id="folder-home" class="section">
+        <div class="hub-section-title"><div><span class="eyebrow">SHARED LIBRARY</span><h2>필요한 자료를 언제든지</h2></div><span>2개 공간 · 원본 파일 제공</span></div>
+        <a class="hub-latest-folder" href="#1109">
+          <div class="hub-date-cover" aria-hidden="true"><span>MEETING NOTE</span><strong>11<span>.</span>09</strong><small>같은 양식, 더 명확한 논의</small><svg viewBox="0 0 96 96"><rect x="22" y="10" width="52" height="72" rx="5"/><path d="M33 27h29M33 36h29M33 53h12v17H33zM51 53h12v17H51z"/></svg></div>
+          <div class="hub-latest-copy"><span class="hub-new-badge">LATEST · 1109</span><h2>농지·건축물 조사서 검토</h2><p>A4 조사서와 한글 편집 원본을 함께 확인하고,<br />근거 이미지·표현 방식·검토 항목을 논의합니다.</p><div class="folder-meta"><span>PDF · HWPX</span><span>원본 2개</span></div><strong>1109 공간 열기 <span aria-hidden="true">→</span></strong></div>
+        </a>
         <a class="material-folder" href="#materials"
           ><div class="folder-cover">
             <img
@@ -55,8 +72,8 @@
             /><span aria-hidden="true">▱</span>
           </div>
           <div>
-            <span class="eyebrow">MEETING MATERIALS</span>
-            <h2>회의자료</h2>
+            <span class="eyebrow">PROJECT ARCHIVE</span>
+            <h2>프로젝트 기초자료</h2>
             <p>
               프로젝트 체계도부터 14주 로드맵까지<br />연구와 개발을 함께
               논의하는 이미지 10장
@@ -67,6 +84,24 @@
             <strong>폴더 열기 →</strong>
           </div></a
         >
+        <div class="hub-communication-banner"><span class="hub-message-icon" aria-hidden="true">↗</span><div><h3>자료는 공유하고, 의견은 구체적으로.</h3><p>1109 공간의 검토 질문과 의견 템플릿으로 논의를 시작하세요. 공간 링크를 전달하면 누구나 같은 원본을 바로 확인할 수 있습니다.</p></div><a href="#1109">검토 시작하기 →</a></div>
+      </section>
+      <section id="meeting-1109" class="section" aria-labelledby="meeting-1109-title" hidden>
+        <div class="hub-space-heading"><div><a class="hub-back" href="#">← 전체 자료</a><div class="eyebrow">1109 / REPORT REVIEW</div><h2 id="meeting-1109-title">농지·건축물 조사서 검토</h2><p>A4 한 장에 담기는 조사서, 함께 읽고 개선하는 기준.</p></div><button class="button secondary" type="button" data-copy-meeting-link>이 공간 링크 복사 ↗</button></div>
+        <div class="hub-space-layout">
+          <div class="hub-documents">
+            <article class="hub-document-card"><div class="hub-file-heading"><span class="hub-file-icon" aria-hidden="true">PDF</span><div><span class="hub-file-kicker">바로 보기 · 공유용</span><h3>농지·건축물 의심조사서 A4</h3><p>PDF 원본 · 660 KB</p></div></div><p class="hub-file-description">항목 구성, 근거 이미지 배치, A4 출력 가독성을 확인하는 기준 자료입니다.</p><div class="hub-file-actions"><a class="button primary" href="meeting-materials/1109/농지_건축물_의심조사서_A4.pdf" target="_blank" rel="noopener">PDF 열기 ↗</a><a class="hub-download" href="meeting-materials/1109/농지_건축물_의심조사서_A4.pdf" download="농지_건축물_의심조사서_A4.pdf">원본 다운로드 ↓</a></div></article>
+            <article class="hub-document-card"><div class="hub-file-heading"><span class="hub-file-icon hub-file-icon-edit" aria-hidden="true">HWPX</span><div><span class="hub-file-kicker">수정·작성용</span><h3>조사서 한글 편집 원본</h3><p>HWPX 원본 · 165 KB</p></div></div><p class="hub-file-description">검토한 내용을 반영하거나 조사 대상에 맞게 작성할 수 있는 한글 문서입니다.</p><div class="hub-file-actions"><a class="button secondary" href="meeting-materials/1109/농지_건축물_의심조사서_A4_편집용.hwpx" download="농지_건축물_의심조사서_A4_편집용.hwpx">편집 원본 다운로드 ↓</a><small>한글 등 HWPX 지원 프로그램에서 열기</small></div></article>
+            <details class="hub-pdf-preview"><summary>페이지 안에서 PDF 미리보기 <span aria-hidden="true">＋</span></summary><object data-pdf-source="meeting-materials/1109/농지_건축물_의심조사서_A4.pdf#view=FitH" type="application/pdf" aria-label="농지 건축물 의심조사서 PDF 미리보기"><p>이 브라우저에서는 PDF 미리보기를 지원하지 않습니다. <a href="meeting-materials/1109/농지_건축물_의심조사서_A4.pdf" target="_blank" rel="noopener">PDF를 새 창에서 열어보세요.</a></p></object><a href="meeting-materials/1109/농지_건축물_의심조사서_A4.pdf" target="_blank" rel="noopener">미리보기가 보이지 않으면 PDF 열기 ↗</a></details>
+          </div>
+          <aside class="hub-discussion" aria-labelledby="hub-discussion-title"><span class="eyebrow">LET’S DISCUSS</span><h3 id="hub-discussion-title">같이 확인할 세 가지</h3><ol><li><span>01</span><div><strong>A4 한 장에 읽히나요?</strong><p>표·문장·여백이 잘리지 않고 자연스럽게 이어지는지 확인합니다.</p></div></li><li><span>02</span><div><strong>이미지가 근거를 설명하나요?</strong><p>위치와 변화 영역이 보이고, 이미지 설명이 자료와 맞는지 살펴봅니다.</p></div></li><li><span>03</span><div><strong>다음 확인행동이 명확한가요?</strong><p>관찰 내용과 추가 확인이 필요한 사항을 구분해 의견을 남깁니다.</p></div></li></ol><a href="analysis.html" class="hub-demo-link">분석 데모와 함께 확인 <span aria-hidden="true">↗</span></a></aside>
+        </div>
+        <div class="hub-feedback"><div><span class="eyebrow">KEEP THE CONVERSATION GOING</span><h3>같은 맥락으로 의견을 나누세요</h3><p>아래 템플릿에 의견을 적고 복사해 사용 중인 메신저나 회의록에 전달하세요.</p><p class="hub-local-note">이 입력란은 공유 게시판이 아니며 작성 내용은 서버에 저장되지 않습니다.</p></div><div><label for="hub-feedback-text">검토 의견</label><textarea id="hub-feedback-text" rows="7">[1109 조사서 검토]
+확인한 자료: PDF / HWPX
+검토 위치(항목·페이지):
+의견 및 확인한 근거:
+제안하는 수정:
+다음 확인행동:</textarea><div class="hub-feedback-actions"><button class="button primary" type="button" id="copy-feedback">의견과 자료 링크 복사 ↗</button><span id="feedback-copy-status" role="status" aria-live="polite"></span></div></div></div>
       </section>
       <section id="folder-content" class="section" hidden>
         <div class="material-toolbar">
@@ -385,7 +420,7 @@
         ></a
       >
       <p>AI는 찾고, GIS는 계산하고, GNSS는 검증합니다.</p>
-      <span>RESEARCH PLAN · v0.2</span>
+      <a class="meeting-access" href="meeting.html">언제든, 회의자료 <span aria-hidden="true">↗</span></a>
     </footer>
   </body>
 </html>

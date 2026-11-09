@@ -10,7 +10,10 @@
     <title>분석 데모 | BUILDINGSCAN</title>
     <link rel="icon" type="image/svg+xml" href="building-scan-mark.svg" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="analysis-motion.css" />
     <script src="app.js" defer></script>
+    <script src="analysis-motion.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">본문 바로가기</a>
@@ -30,7 +33,7 @@
         <a href="index.html">홈</a><a href="project.html">프로젝트 소개</a
         ><a href="analysis.html" aria-current="page">분석 데모</a
         ><a href="roadmap.html">개발 계획</a
-        ><a href="meeting.html">회의 공간</a>
+        ><a href="meeting.html">회의자료</a>
       </nav>
       <span class="header-draft">연구·개발계획 v0.2</span>
     </header>
@@ -40,22 +43,30 @@
           <a href="index.html">홈</a><span aria-hidden="true">/</span
           ><span>분석 데모</span>
         </div>
-        <div class="eyebrow">BUILDINGSCAN / 02</div>
-        <h1>두 시점을 비교하며 변화를 살펴보세요</h1>
-        <p>가상 시범 구역으로 탐지 결과와 검토 흐름을 미리 경험합니다.</p>
+        <div class="eyebrow">INTERACTIVE ANALYSIS</div>
+        <h1>변화를 읽고, 근거를 연결하다.</h1>
+        <p>탐지부터 조사서까지. 지도 위에서 분석의 흐름을 따라가 보세요.</p>
       </div>
       <section class="section demo-section" id="demo">
         <div class="section-heading">
           <div>
-            <div class="eyebrow">02 / PRODUCT CONCEPT</div>
-            <h2>이런 분석 도구를 함께 만듭니다</h2>
+            <div class="eyebrow">THE ANALYSIS JOURNEY</div>
+            <h2>하나의 필지, 네 단계의 확인</h2>
           </div>
-          <span class="outline-badge">설명용 예시 · 실제 AI 분석 아님</span>
+          <span class="outline-badge">설명용 가상 데이터 · 실제 AI 분석 아님</span>
         </div>
+        <div class="analysis-player" data-motion-stage="0" data-playing="true" data-map-period="after">
+          <div class="analysis-player-head">
+            <span><i class="motion-live-dot" aria-hidden="true"></i> ANALYSIS IN MOTION</span>
+            <div class="motion-controls">
+              <button id="motion-restart" type="button" aria-label="분석 흐름을 처음부터 다시 보기">↺ <span>처음부터</span></button>
+              <button id="motion-toggle" type="button" aria-pressed="true"><span class="play-symbol" aria-hidden="true">Ⅱ</span> <span class="play-label">일시정지</span></button>
+            </div>
+          </div>
         <div class="demo">
           <div class="demo-map">
             <div class="map-toolbar">
-              <span>시범 구역 A <small>가상 데이터</small></span>
+              <span>시범 구역 A <small>ILLUSTRATIVE MAP</small></span>
               <div class="segmented" aria-label="시점 선택">
                 <button data-period="before" aria-pressed="false">
                   이전 시점</button
@@ -71,6 +82,7 @@
               aria-label="가상 시범 구역의 건축물 배치와 변화 영역"
             >
               <defs>
+                <linearGradient id="scan-light" x1="0" x2="1"><stop stop-color="#238d72" stop-opacity="0"/><stop offset="1" stop-color="#238d72" stop-opacity=".24"/></linearGradient>
                 <pattern
                   id="map-grid"
                   width="26"
@@ -129,6 +141,14 @@
                     stroke-dasharray="7 4"
                   />
                 </g>
+                <g class="parcel-layer" fill="none" stroke="#237763" stroke-width="2.5" stroke-dasharray="8 5">
+                  <path d="M55 18H245V144H55Z"/>
+                  <path d="M222 22H332V136H222Z" opacity=".45"/>
+                </g>
+                <g class="overlap-layer">
+                  <path d="M186 58h40v67h-40z" fill="#edab57" fill-opacity=".55" stroke="#be7835" stroke-width="2.5"/>
+                  <path class="measure-line" d="M55 155H245M55 149v12M245 149v12" fill="none" stroke="#277d65" stroke-width="2"/>
+                </g>
                 <g fill="#a7bd97">
                   <circle cx="41" cy="70" r="15" />
                   <circle cx="49" cy="113" r="11" />
@@ -136,8 +156,8 @@
                   <circle cx="706" cy="96" r="17" />
                 </g>
               </g>
-              <g transform="translate(166 57)">
-                <rect width="105" height="28" rx="5" fill="#fffdf7" />
+              <g class="target-label" transform="translate(117 27)">
+                <rect width="137" height="30" rx="6" fill="#fffdf7" stroke="#d5dfd7" />
                 <text
                   x="12"
                   y="19"
@@ -145,8 +165,34 @@
                   font-size="12"
                   font-family="sans-serif"
                 >
-                  A-01 검토 대상
+                  A-01 · 검토 대상
                 </text>
+              </g>
+              <g class="scan-layer" aria-hidden="true">
+                <rect class="scan-band" x="-120" y="0" width="120" height="350" fill="url(#scan-light)"/>
+                <path class="scan-beam" d="M0 0V350" stroke="#278a70" stroke-width="2"/>
+              </g>
+              <g class="detect-layer" fill="none" stroke="#237763" stroke-width="3" aria-hidden="true">
+                <path class="detect-corners" d="M70 97V78h19M222 47h19v19M264 146v19h-19M112 194H93v-19"/>
+              </g>
+              <g class="gnss-layer" transform="translate(233 126)" aria-hidden="true">
+                <circle class="gnss-ring" r="37" fill="#20876a" fill-opacity=".08" stroke="#20876a" stroke-opacity=".5"/>
+                <circle r="19" fill="#fff" stroke="#237763" stroke-width="2"/>
+                <path d="M-10 0H10M0-10V10" stroke="#237763" stroke-width="2"/>
+                <circle r="4" fill="#237763"/>
+                <path d="M26 7h53" stroke="#237763" stroke-width="1.5"/>
+                <rect x="72" y="-9" width="124" height="31" rx="6" fill="#fff" stroke="#d5dfd7"/>
+                <text x="84" y="11" font-family="sans-serif" font-size="12" fill="#21634e">현장 확인 지점</text>
+              </g>
+              <g class="report-layer" transform="translate(527 65)" aria-hidden="true">
+                <rect x="6" y="8" width="126" height="160" rx="8" fill="#173f35" fill-opacity=".12"/>
+                <rect width="126" height="160" rx="8" fill="#fffefa" stroke="#adc8b8"/>
+                <rect x="16" y="16" width="31" height="5" rx="2" fill="#237763"/>
+                <text x="16" y="44" font-size="12" font-weight="700" fill="#214c3d" font-family="sans-serif">의심 조사서</text>
+                <path d="M16 55H110M16 66H83" stroke="#d1dcd4" stroke-width="3"/>
+                <rect x="16" y="79" width="94" height="43" rx="3" fill="#e5eee4"/>
+                <path d="M30 91H58V111H30ZM69 86H96V111H69Z" fill="#a2bba4"/>
+                <path d="M16 135H110M16 145H73" stroke="#d1dcd4" stroke-width="3"/>
               </g>
               <g transform="translate(709 265)" fill="#4a6653">
                 <path d="M0 23L7 0l7 23-7-5z" />
@@ -156,15 +202,18 @@
             <div class="map-legend">
               <span><i class="legend-square normal"></i>건축물 영역</span
               ><span><i class="legend-square changed"></i>변화 의심 영역</span
-              ><span id="period-label">현재 시점 · 변화 영역 표시 중</span>
+              ><span id="period-label" aria-live="polite">현재 시점 · 변화 영역 표시 중</span>
             </div>
           </div>
           <aside class="inspection">
             <div class="inspection-top">
-              <span class="eyebrow">REVIEW PANEL</span
-              ><span class="status">검토 필요</span>
+              <span class="eyebrow">PARCEL A-01</span
+              ><span class="status">검토 후보</span>
             </div>
-            <h3>A-01 <span>건축물 변화 후보</span></h3>
+            <div class="motion-stage-number" aria-hidden="true">01 <span>/ 04</span></div>
+            <h3 id="motion-title">AI가 변화를 찾습니다</h3>
+            <p id="motion-description" class="motion-description">이전·현재 영상을 비교해 건축물 외곽의 변화 후보를 표시합니다.</p>
+            <div class="motion-metric"><span id="motion-metric-value">1<span>개</span></span><small id="motion-metric-label">변화 후보 · 가상 예시</small></div>
             <dl>
               <div>
                 <dt>탐지 유형</dt>
@@ -180,14 +229,26 @@
               </div>
             </dl>
             <div class="review-note">
-              <strong>AI가 찾는 것은 ‘변화’입니다.</strong>
-              <p>
-                촬영 각도·그림자·가림으로도 차이가 생길 수 있습니다. 의심 영역은
-                자료 대조와 사람의 검토를 거쳐 판단합니다.
-              </p>
+              <strong>판단의 마지막 단계는 사람입니다.</strong>
+              <p>촬영 오차와 자료 차이를 함께 검토합니다. 변화 후보는 위법 여부의 확정이 아닙니다.</p>
             </div>
-            <a href="meeting.html">우리가 정해야 할 검토 기준 <span>↗</span></a>
+            <a class="button primary report-link" href="report.html">A4 조사서 미리보기 <span>↗</span></a>
+            <small class="report-example-note">첨부 양식 예시 · 건물 907</small>
           </aside>
+        </div>
+          <div class="motion-timeline" aria-label="분석 단계 선택">
+            <button type="button" data-motion-step="0" aria-pressed="true"><span class="timeline-number">01</span><span><strong>AI 탐지</strong><small>변화 후보 찾기</small></span><span class="timeline-progress"></span></button>
+            <button type="button" data-motion-step="1" aria-pressed="false"><span class="timeline-number">02</span><span><strong>GIS 계산</strong><small>농지와 건축물 중첩</small></span><span class="timeline-progress"></span></button>
+            <button type="button" data-motion-step="2" aria-pressed="false"><span class="timeline-number">03</span><span><strong>GNSS 검증</strong><small>현장 확인 계획</small></span><span class="timeline-progress"></span></button>
+            <button type="button" data-motion-step="3" aria-pressed="false"><span class="timeline-number">04</span><span><strong>조사서 연결</strong><small>근거를 한 장으로</small></span><span class="timeline-progress"></span></button>
+          </div>
+        </div>
+        <div class="analysis-footnote">
+          <p>지도와 수치는 흐름을 설명하기 위한 가상 예시입니다. 실제 영상 분석·측량 결과가 아닙니다.</p>
+          <div class="analysis-next-links">
+            <a href="meeting.html#1109">1109 회의에서 함께 검토하기 <span aria-hidden="true">→</span></a>
+            <a class="button secondary analysis-platform-link" href="https://gis-decision-platform.vercel.app/" target="_blank" rel="noopener noreferrer">실제 분석 플랫폼 열기 <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
       </section>
       <nav class="page-navigation" aria-label="페이지 이동">
@@ -211,7 +272,7 @@
         ></a
       >
       <p>작은 시범 구역에서 시작하는, 더 나은 도시 관찰.</p>
-      <span>RESEARCH PLAN · v0.2</span>
+      <a class="meeting-access" href="meeting.html">언제든, 회의자료 <span aria-hidden="true">↗</span></a>
     </footer>
   </body>
 </html>

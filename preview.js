@@ -10,6 +10,17 @@ const files = {
   "/research.css": ["research.css", "text/css"],
   "/app.js": ["app.js", "application/javascript"],
   "/gallery.js": ["gallery.js", "application/javascript"],
+  "/theme.css": ["theme.css", "text/css"],
+  "/home-motion.css": ["home-motion.css", "text/css"],
+  "/home-motion.js": ["home-motion.js", "application/javascript"],
+  "/analysis-motion.css": ["analysis-motion.css", "text/css"],
+  "/analysis-motion.js": ["analysis-motion.js", "application/javascript"],
+  "/meeting-hub.css": ["meeting-hub.css", "text/css"],
+  "/meeting-hub.js": ["meeting-hub.js", "application/javascript"],
+  "/report.html": ["report.html", "text/html"],
+  "/report.css": ["report.css", "text/css"],
+  "/report.js": ["report.js", "application/javascript"],
+  "/report-assets/907-location.png": ["report-assets/907-location.png", "image/png"],
 };
 for (const page of ["project", "analysis", "roadmap", "meeting"])
   files[`/${page}.html`] = [`${page}.html`, "text/html"];
@@ -33,6 +44,12 @@ files["/meeting-materials/회의자료_10장.zip"] = [
 files["/meeting-materials/manifest.json"] = [
   "meeting-materials/manifest.json",
   "application/json",
+];
+files["/meeting-materials/1109/농지_건축물_의심조사서_A4.pdf"] = [
+  "meeting-materials/1109/농지_건축물_의심조사서_A4.pdf", "application/pdf",
+];
+files["/meeting-materials/1109/농지_건축물_의심조사서_A4_편집용.hwpx"] = [
+  "meeting-materials/1109/농지_건축물_의심조사서_A4_편집용.hwpx", "application/hwp+zip",
 ];
 http
   .createServer((req, res) => {

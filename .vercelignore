@@ -1,0 +1,7 @@
+.git
+tmp
+tmp-analysis-*.png
+node_modules
+README.md
+preview.js
+.env*
