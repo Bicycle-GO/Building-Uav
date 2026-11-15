@@ -34,14 +34,16 @@
     copyText(`${feedback}\n\n자료 링크: ${spaceUrl()}`, document.querySelector("#feedback-copy-status"));
   });
 
-  document.querySelector(".hub-pdf-preview")?.addEventListener("toggle", (event) => {
-    if (!event.currentTarget.open) return;
-    const preview = event.currentTarget.querySelector("[data-pdf-source]");
-    if (!preview.hasAttribute("data")) preview.setAttribute("data", preview.dataset.pdfSource);
+  document.querySelectorAll(".hub-pdf-preview").forEach((details) => {
+    details.addEventListener("toggle", (event) => {
+      if (!event.currentTarget.open) return;
+      const preview = event.currentTarget.querySelector("[data-pdf-source]");
+      if (preview && !preview.hasAttribute("data")) preview.setAttribute("data", preview.dataset.pdfSource);
+    });
   });
 
   function updateNavigation(scrollToPanel = false) {
-    const route = location.hash === "#1109" ? "1109" : location.hash.startsWith("#materials") ? "materials" : "home";
+    const route = location.hash === "#1116" ? "1116" : location.hash === "#1109" ? "1109" : location.hash.startsWith("#materials") ? "materials" : "home";
     document.querySelectorAll("[data-hub-route]").forEach((link) => {
       if (link.dataset.hubRoute === route) link.setAttribute("aria-current", "page");
       else link.removeAttribute("aria-current");
@@ -51,11 +53,11 @@
     if (scrollToPanel && !/^#materials\//.test(location.hash)) {
       // Run after the gallery's route handler has made the selected panel visible.
       requestAnimationFrame(() => {
-        const panel = document.getElementById(route === "1109" ? "meeting-1109" : route === "materials" ? "folder-content" : "folder-home");
+        const panel = document.getElementById(route === "1116" ? "meeting-1116" : route === "1109" ? "meeting-1109" : route === "materials" ? "folder-content" : "folder-home");
         panel?.scrollIntoView({block: "start", behavior: "instant"});
       });
     }
   }
   window.addEventListener("hashchange", () => updateNavigation(true));
-  updateNavigation(location.hash === "#1109" || location.hash === "#materials");
+  updateNavigation(location.hash === "#1116" || location.hash === "#1109" || location.hash === "#materials");
 })();

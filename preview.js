@@ -57,6 +57,9 @@ files["/meeting-materials/1109/농지_건축물_의심조사서_A4_편집용.hwp
 files["/meeting-materials/1109/수정사항_20261110.pptx"] = [
   "meeting-materials/1109/수정사항_20261110.pptx", "application/vnd.openxmlformats-officedocument.presentationml.presentation",
 ];
+files["/meeting-materials/1116/농지건축물_발표자료.pdf"] = [
+  "meeting-materials/1116/농지건축물_발표자료.pdf", "application/pdf",
+];
 http
   .createServer((req, res) => {
     let pathname;
