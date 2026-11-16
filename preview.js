@@ -60,6 +60,9 @@ files["/meeting-materials/1109/수정사항_20261110.pptx"] = [
 files["/meeting-materials/1116/농지건축물_발표자료.pdf"] = [
   "meeting-materials/1116/농지건축물_발표자료.pdf", "application/pdf",
 ];
+files["/meeting-materials/1116/AI_발표자료_Illustrator_벡터_16장.pdf"] = [
+  "meeting-materials/1116/AI_발표자료_Illustrator_벡터_16장.pdf", "application/pdf",
+];
 http
   .createServer((req, res) => {
     let pathname;

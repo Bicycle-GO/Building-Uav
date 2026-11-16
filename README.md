@@ -26,6 +26,7 @@ Node.js에서 `node preview.js`를 실행하고 http://127.0.0.1:4173 에 접속
 
 - 고정 링크: `meeting.html#1116`
 - `meeting-materials/1116/농지건축물_발표자료.pdf`에 첨부된 발표자료 원본을 그대로 보관합니다.
+- `meeting-materials/1116/AI_발표자료_Illustrator_벡터_16장.pdf`를 추가해 발표자료 PDF 원본 2개를 제공합니다.
 - PDF 새 창 열기·페이지 안 미리보기·원본 다운로드·폴더 링크 복사를 지원합니다.
 
 ## 1109 회의공간
