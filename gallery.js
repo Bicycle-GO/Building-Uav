@@ -62,13 +62,16 @@ fullImage.addEventListener("error", () => {
     "이미지를 불러오지 못했습니다. 원본 다운로드를 이용하거나 다시 열어주세요.";
 });
 function syncRoute() {
+  const in1123 = location.hash === "#1123";
   const in1116 = location.hash === "#1116";
   const in1109 = location.hash === "#1109";
   const inFolder =
     location.hash === "#materials" ||
     /^#materials\/(?:[1-9]|10)$/.test(location.hash);
-  document.querySelector("#folder-home").hidden = inFolder || in1109 || in1116;
+  document.querySelector("#folder-home").hidden = inFolder || in1109 || in1116 || in1123;
   document.querySelector("#folder-content").hidden = !inFolder;
+  const meeting1123 = document.querySelector("#meeting-1123");
+  if (meeting1123) meeting1123.hidden = !in1123;
   const meeting1116 = document.querySelector("#meeting-1116");
   if (meeting1116) meeting1116.hidden = !in1116;
   const meeting1109 = document.querySelector("#meeting-1109");

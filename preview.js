@@ -63,6 +63,10 @@ files["/meeting-materials/1116/농지건축물_발표자료.pdf"] = [
 files["/meeting-materials/1116/AI_발표자료_Illustrator_벡터_16장.pdf"] = [
   "meeting-materials/1116/AI_발표자료_Illustrator_벡터_16장.pdf", "application/pdf",
 ];
+files["/meeting-materials/1123/농지건축물_연구배경과목표_5장.pptx"] = [
+  "meeting-materials/1123/농지건축물_연구배경과목표_5장.pptx",
+  "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+];
 http
   .createServer((req, res) => {
     let pathname;
