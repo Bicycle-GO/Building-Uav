@@ -67,6 +67,9 @@ files["/meeting-materials/1123/농지건축물_연구배경과목표_5장.pptx"]
   "meeting-materials/1123/농지건축물_연구배경과목표_5장.pptx",
   "application/vnd.openxmlformats-officedocument.presentationml.presentation",
 ];
+files["/meeting-materials/1126/농지 건축물 탐지 시스템 아키텍처.png"] = [
+  "meeting-materials/1126/농지 건축물 탐지 시스템 아키텍처.png", "image/png",
+];
 http
   .createServer((req, res) => {
     let pathname;

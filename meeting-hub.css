@@ -11,9 +11,13 @@
 .hub-file-icon-slides{background:#f9efe7;border-color:#ecd8c8;color:#a96937}
 .hub-latest-folder + .hub-latest-folder{margin-top:22px}#meeting-1116{scroll-margin-top:22px}@media(max-width:700px){#meeting-1116{scroll-margin-top:12px}}
 
-#meeting-1123 { scroll-margin-top: 22px; }
+#meeting-1123, #meeting-1126 { scroll-margin-top: 22px; }
 #meeting-1123 .hub-file-actions { margin-top: 18px; }
 #meeting-1123 .hub-file-heading h3 { overflow-wrap: anywhere; }
 @media (max-width: 700px) {
-  #meeting-1123 { scroll-margin-top: 12px; }
+  #meeting-1123, #meeting-1126 { scroll-margin-top: 12px; }
 }
+
+.hub-image-preview { margin: 18px 0 0; }
+.hub-image-preview img { display: block; width: 100%; height: auto; border-radius: 9px; }
+.hub-image-preview figcaption { margin-top: 10px; color: #687a70; font-size: 12px; }

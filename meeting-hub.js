@@ -1,5 +1,6 @@
 (() => {
   const copyStatus = document.querySelector("#hub-copy-status");
+  const meetingDates = new Set(["1109", "1116", "1123", "1126"]);
   const spaceUrl = () => {
     const url = new URL(location.href);
     url.hash = "1109";
@@ -43,7 +44,8 @@
   });
 
   function updateNavigation(scrollToPanel = false) {
-    const route = location.hash === "#1123" ? "1123" : location.hash === "#1116" ? "1116" : location.hash === "#1109" ? "1109" : location.hash.startsWith("#materials") ? "materials" : "home";
+    const hashRoute = location.hash.slice(1);
+    const route = meetingDates.has(hashRoute) ? hashRoute : location.hash.startsWith("#materials") ? "materials" : "home";
     document.querySelectorAll("[data-hub-route]").forEach((link) => {
       if (link.dataset.hubRoute === route) link.setAttribute("aria-current", "page");
       else link.removeAttribute("aria-current");
@@ -53,11 +55,11 @@
     if (scrollToPanel && !/^#materials\//.test(location.hash)) {
       // Run after the gallery's route handler has made the selected panel visible.
       requestAnimationFrame(() => {
-        const panel = document.getElementById(route === "1123" ? "meeting-1123" : route === "1116" ? "meeting-1116" : route === "1109" ? "meeting-1109" : route === "materials" ? "folder-content" : "folder-home");
+        const panel = document.getElementById(meetingDates.has(route) ? `meeting-${route}` : route === "materials" ? "folder-content" : "folder-home");
         panel?.scrollIntoView({block: "start", behavior: "instant"});
       });
     }
   }
   window.addEventListener("hashchange", () => updateNavigation(true));
-  updateNavigation(location.hash === "#1123" || location.hash === "#1116" || location.hash === "#1109" || location.hash === "#materials");
+  updateNavigation(meetingDates.has(location.hash.slice(1)) || location.hash === "#materials");
 })();
